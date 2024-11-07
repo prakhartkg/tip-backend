@@ -28,7 +28,7 @@ container_client = blob_service_client.get_container_client(CONTAINER_NAME)
 
 # Azure OpenAI settings
 AZURE_OPENAI_ENDPOINT = "https://ip-openai-serv.openai.azure.com"
-AZURE_OPENAI_API_KEY = "b7acb25a4fa347f5ad6d3cdc3d14f447"
+AZURE_OPENAI_API_KEY = ""
 CHAT_DEPLOYMENT_NAME = "gpt-4o-chat"
 EMBEDDINGS_DEPLOYMENT_NAME = "text-embeddings-legal"
 
