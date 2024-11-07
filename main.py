@@ -32,14 +32,14 @@ def serve_file(filename):
         abort(404)
 
 # Azure Blob Storage settings
-# Dec-Azur con str
+AZURE_CONNECTION_STRING = ""
 CONTAINER_NAME = "pdf-files"
 blob_service_client = BlobServiceClient.from_connection_string(AZURE_CONNECTION_STRING)
 container_client = blob_service_client.get_container_client(CONTAINER_NAME)
 
 # Azure OpenAI settings
 AZURE_OPENAI_ENDPOINT = "https://ip-openai-serv.openai.azure.com"  # e.g., https://<your-resource-name>.openai.azure.com/
-AZURE_OPENAI_API_KEY = "b7acb25a4fa347f5ad6d3cdc3d14f447"
+AZURE_OPENAI_API_KEY = ""
 CHAT_DEPLOYMENT_NAME = "gpt-4-legal" # Deployment name for chat model
 EMBEDDINGS_DEPLOYMENT_NAME = "text-embeddings-legal"  # Deployment name for embeddings model
 
