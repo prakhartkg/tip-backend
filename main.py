@@ -32,7 +32,7 @@ def serve_file(filename):
         abort(404)
 
 # Azure Blob Storage settings
-AZURE_CONNECTION_STRING = ""
+# Dec-Azur con str
 CONTAINER_NAME = "pdf-files"
 blob_service_client = BlobServiceClient.from_connection_string(AZURE_CONNECTION_STRING)
 container_client = blob_service_client.get_container_client(CONTAINER_NAME)
