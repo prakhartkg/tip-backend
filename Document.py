@@ -21,7 +21,7 @@ for logger in loggers:
     if "transformers" in logger.name.lower():
         logger.setLevel(logging.ERROR)
 
-AZURE_CONNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=ipblobstorage;AccountKey=JNTAD+Uj16P0lpG8akyLpeM/TVr/we99x6v8Tpu/JN01E7u0K9QaT/jn2jTlboB/Q391+orwEqNE+AStQ4KUwA==;EndpointSuffix=core.windows.net"
+AZURE_CONNECTION_STRING = ""
 CONTAINER_NAME = "pdf-files"
 blob_service_client = BlobServiceClient.from_connection_string(AZURE_CONNECTION_STRING)
 container_client = blob_service_client.get_container_client(CONTAINER_NAME)

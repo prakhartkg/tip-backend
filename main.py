@@ -20,8 +20,19 @@ app.add_middleware(
     allow_methods=["*"]
 )
 
+
+# Configure the directory where your files are stored
+FILE_DIRECTORY = 'C:/Users/jainprak/Desktop/Backend'
+
+@app.route('/files/<path:filename>', methods=['GET'])
+def serve_file(filename):
+    try:
+        return send_from_directory(FILE_DIRECTORY, filename)
+    except FileNotFoundError:
+        abort(404)
+
 # Azure Blob Storage settings
-AZURE_CONNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=ipblobstorage;AccountKey=JNTAD+Uj16P0lpG8akyLpeM/TVr/we99x6v8Tpu/JN01E7u0K9QaT/jn2jTlboB/Q391+orwEqNE+AStQ4KUwA==;EndpointSuffix=core.windows.net"
+AZURE_CONNECTION_STRING = ""
 CONTAINER_NAME = "pdf-files"
 blob_service_client = BlobServiceClient.from_connection_string(AZURE_CONNECTION_STRING)
 container_client = blob_service_client.get_container_client(CONTAINER_NAME)
